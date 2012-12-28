@@ -1,6 +1,6 @@
 module.exports = function( hook ) {
 	var fs = require( "fs" )
-		, appPkg = __dirname + "/../../../package.json"
+		, appPkg = __dirname + "/../../../../package.json"
 		, pkg = JSON.parse( fs.readFileSync( appPkg ).toString() )
 		, installScripts = []
 		, helperScript
