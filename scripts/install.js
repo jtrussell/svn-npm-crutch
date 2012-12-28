@@ -1,5 +1,5 @@
 var fs = require( "fs" )
-	, appPkg = "../../../package.json"
+	, appPkg = "../../package.json"
 	, pkg = JSON.parse( fs.readFileSync( appPkg ).toString() )
 	, installScripts
 	, helperScript

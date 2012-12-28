@@ -2,7 +2,7 @@
 
 Allow node modules to be installed from svn repos
 
-## Getting Started (_soon_)
+## Getting Started (not yet on npm)
 Install the module with: `npm install svn-npm-crutch`
 
 After installing svn-npm-crutch you may use list dependencies from subversion
