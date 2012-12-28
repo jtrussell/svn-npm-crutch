@@ -1,0 +1,36 @@
+{
+  "name": "svn-npm-crutch",
+  "description": "Allow modules to be installed from svn repos",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jrussell-ivantage/svn-npm-crutch",
+  "author": {
+    "name": "Justin",
+    "email": "jrussell@ivantagehealth.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrussell-ivantage/svn-npm-crutch"
+  },
+  "bugs": {
+    "url": "https://github.com/jrussell-ivantage/svn-npm-crutch/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jrussell-ivantage/svn-npm-crutch/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit",
+		"install": "node scripts/install.js",
+		"uninstall": "node scripts/uninstall.js"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0rc4"
+  },
+  "keywords": []
+}
