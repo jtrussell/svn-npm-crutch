@@ -26,11 +26,12 @@
   },
   "scripts": {
     "test": "grunt nodeunit",
-		"install": "node scripts/install.js",
-		"uninstall": "node scripts/uninstall.js"
+    "install": "node scripts/install.js",
+    "uninstall": "node scripts/uninstall.js"
   },
   "devDependencies": {
-    "grunt": "~0.4.0rc4"
+    "grunt": "~0.4.0rc4",
+    "grunt-contrib-jshint": "~0.1.0"
   },
   "keywords": []
 }
