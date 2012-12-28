@@ -1,13 +1,17 @@
 # svn-npm-crutch
 
-Allow modules to be installed from svn repos
+Allow node modules to be installed from svn repos
 
-## Getting Started
+## Getting Started (_soon_)
 Install the module with: `npm install svn-npm-crutch`
 
+After installing svn-npm-crutch you may use list dependencies from subversion
+repositories in your `package.json` under a "svnDependencies" key. I.e.
+
 ```javascript
-var svn_npm_crutch = require('svn-npm-crutch');
-svn_npm_crutch.awesome(); // "awesome"
+"svnDependencies": {
+	"svn-module": "svn://path/to/svn/repo/trunk"
+}
 ```
 
 ## Documentation
@@ -23,5 +27,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 Justin  
+Copyright (c) 2012 iVantage Health Analytics
 Licensed under the MIT license.
