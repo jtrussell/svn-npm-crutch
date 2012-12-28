@@ -21,5 +21,5 @@ helperScript = "node ./node_modules/svn-npm-crutch/lib/svn-npm-crutch.js";
 if( -1 === installScripts.indexOf( helperScript ) ) {
 	installScripts.push( helperScript );
 	pkg.scripts.install = installScripts.join( " && " );
-	fs.writeFileSync( appPkg, JSON.stringify( pkg ) );
+	fs.writeFileSync( appPkg, JSON.stringify( pkg, null, "\t" ) );
 }
