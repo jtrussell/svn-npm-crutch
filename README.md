@@ -10,7 +10,7 @@ file.
 Install the module with: `npm install svn-npm-crutch`
 
 After installing svn-npm-crutch you may use list dependencies from subversion
-repositories in your `package.json` under a "svnDependencies" key. I.e.
+repositories in your `package.json` under a "svnDependencies" key. e.g.
 
 ```javascript
 "svnDependencies": {
