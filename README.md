@@ -2,6 +2,10 @@
 
 Allow node modules to be installed from svn repos
 
+###WARNING###
+Installing this module **will** make changes to your project's package.json
+file.
+
 ## Getting Started (not yet on npm)
 Install the module with: `npm install svn-npm-crutch`
 
@@ -21,7 +25,9 @@ _(Coming soon)_
 _(Coming soon)_
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
+In lieu of a formal styleguide, take care to maintain the existing coding style.
+Add unit tests for any new or changed functionality. Lint and test your code
+using [grunt](http://gruntjs.com/).
 
 ## Release History
 _(Nothing yet)_
