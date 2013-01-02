@@ -1,7 +1,7 @@
 {
   "name": "svn-npm-crutch",
   "description": "Allow modules to be installed from svn repos",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/jrussell-ivantage/svn-npm-crutch",
   "author": {
     "name": "Justin",
@@ -25,13 +25,15 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "test": "grunt nodeunit",
+    "test": "grunt test",
     "install": "node scripts/install.js",
     "uninstall": "node scripts/uninstall.js"
   },
   "devDependencies": {
     "grunt": "~0.4.0rc4",
-    "grunt-contrib-jshint": "~0.1.0"
+    "grunt-contrib-jshint": "~0.1.0",
+    "rimraf": "~2.1.1",
+    "grunt-contrib-nodeunit": "~0.1.1"
   },
   "keywords": []
 }

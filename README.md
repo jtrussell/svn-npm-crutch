@@ -33,7 +33,8 @@ repositories in your `package.json` under a "svnDependencies" key. e.g.
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+
+Run a test `npm test` then take a look at `./test/tmp`
 
 ## TODO
 
@@ -48,7 +49,7 @@ Add unit tests for any new or changed functionality. Lint and test your code
 using [grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+0.3.0 - Tests added
 
 ## License
 Copyright (c) 2012 iVantage Health Analytics

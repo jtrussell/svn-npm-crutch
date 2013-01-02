@@ -1,31 +1,38 @@
-'use strict';
+"use strict";
 
 module.exports = function(grunt) {
 
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
+	grunt.loadNpmTasks( "grunt-contrib-nodeunit" );
 
   // Project configuration.
   grunt.initConfig({
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: ".jshintrc"
       },
       gruntfile: {
-        src: 'Gruntfile.js'
+        src: "Gruntfile.js"
       },
       lib: {
-        src: ['lib/**/*.js']
+        src: ["lib/**/*.js"]
       },
       scripts: {
-        src: ['scripts/**/*.js']
+        src: ["scripts/**/*.js"]
       },
 			index: {
-				src: ['index.js']
+				src: ["index.js"]
 			}
-    }
+    },
+
+		nodeunit: {
+			all: ["test/*_test.js"]
+		}
   });
 
-  // Default task.
-  grunt.registerTask('default', ['jshint']);
+	grunt.registerTask( "test", ["nodeunit"] );
+  grunt.registerTask( "default", [
+		"jshint"
+	]);
 
 };
