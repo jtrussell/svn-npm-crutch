@@ -35,6 +35,13 @@ _(Coming soon)_
 ## Examples
 _(Coming soon)_
 
+## TODO
+
+* Tests... yep
+* Be less invasive? Right now this rewrites your entire package.json after
+	adding it's install hook using JSON.stringify... This isn't horrible but
+	clobbers things like white space.
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style.
 Add unit tests for any new or changed functionality. Lint and test your code
