@@ -7,7 +7,13 @@ Installing this module **will** make changes to your project's package.json
 file.
 
 ## Getting Started (not yet on npm)
-Install the module with: `npm install svn-npm-crutch`
+Add a reference to this repo in your project's package.json file
+
+```javascript
+"dependencies": {
+	"svn-npm-crutch": "git://github.com/jrussell-ivantage/svn-npm-crutch.git"
+}
+```
 
 After installing svn-npm-crutch you may use list dependencies from subversion
 repositories in your `package.json` under a "svnDependencies" key. e.g.
