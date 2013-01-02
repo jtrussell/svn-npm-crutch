@@ -6,6 +6,11 @@ Allow node modules to be installed from svn repos
 Installing this module **will** make changes to your project's package.json
 file.
 
+Installing this module via `npm install` will add an install hook to your
+project's package.json. Once this hook is added anytime your run `npm install`
+for your project svn-npm-crutch looks through your package.json file for an
+`svnDependencies` block where you can list your subversion stored node modules.
+
 ## Getting Started (not yet on npm)
 Add a reference to this repo in your project's package.json file
 
