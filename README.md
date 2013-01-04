@@ -38,10 +38,12 @@ Run a test `npm test` then take a look at `./test/tmp`
 
 ## TODO
 
-* Tests... yep
+* More tests... yep
 * Be less invasive? Right now this rewrites your entire package.json after
 	adding it's install hook using JSON.stringify... This isn't horrible but
 	clobbers things like white space.
+* Don't perform an `svn update` if a specific repo tag/revision number is
+	specified... maybe clean out the old module and do a fresh checkout?
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style.
@@ -50,6 +52,10 @@ using [grunt](http://gruntjs.com/).
 
 ## Release History
 0.3.0 - Tests added
+0.4.0
+ * Refactored install routine
+ * More descriptive status reporting
+ * Performs `svn update` after attempting to install (get module changes)
 
 ## License
 Copyright (c) 2012 iVantage Health Analytics
