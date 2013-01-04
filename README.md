@@ -51,8 +51,9 @@ Add unit tests for any new or changed functionality. Lint and test your code
 using [grunt](http://gruntjs.com/).
 
 ## Release History
-0.3.0 - Tests added
-0.4.0
+* 0.3.0
+ * Tests added
+* 0.4.0
  * Refactored install routine
  * More descriptive status reporting
  * Performs `svn update` after attempting to install (get module changes)
