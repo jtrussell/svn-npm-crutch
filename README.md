@@ -57,6 +57,8 @@ using [grunt](http://gruntjs.com/).
  * Refactored install routine
  * More descriptive status reporting
  * Performs `svn update` after attempting to install (get module changes)
+* 0.4.1
+ * Make sure updates to svn modules are fetched
 
 ## License
 Copyright (c) 2012 iVantage Health Analytics
