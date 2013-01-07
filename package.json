@@ -1,7 +1,7 @@
 {
   "name": "svn-npm-crutch",
   "description": "Allow modules to be installed from svn repos",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "homepage": "https://github.com/jrussell-ivantage/svn-npm-crutch",
   "author": {
     "name": "Justin",
@@ -32,11 +32,11 @@
   "devDependencies": {
     "grunt": "~0.4.0rc4",
     "grunt-contrib-jshint": "~0.1.0",
-    "rimraf": "~2.1.1",
     "grunt-contrib-nodeunit": "~0.1.1"
   },
-  "keywords": [],
+  "keywords": ["svn", "subversion"],
   "dependencies": {
-    "async": "~0.1.22"
+    "async": "~0.1.22",
+    "rimraf": "~2.1.1"
   }
 }
