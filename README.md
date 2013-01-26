@@ -33,7 +33,6 @@ repositories in your `package.json` under a "svnDependencies" key. e.g.
 _(Coming soon)_
 
 ## Examples
-
 Run a test `npm test` then take a look at `./test/tmp`
 
 ## TODO
@@ -44,6 +43,8 @@ Run a test `npm test` then take a look at `./test/tmp`
 	clobbers things like white space.
 * Don't perform an `svn update` if a specific repo tag/revision number is
 	specified... maybe clean out the old module and do a fresh checkout?
+* Better detection of when the module is being installed as a dependency vs
+	being itself installed (i.e. running `npm install` on the project itself)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style.
