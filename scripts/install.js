@@ -5,6 +5,7 @@
 require( "./lib/hooks" )( "install" );
 
 require( "child_process" )
-	.exec( "node ../lib/svn-npm-crutch.js", {
-		cwd: __dirname
+	.spawn( "node", ["../lib/svn-npm-crutch.js"], {
+		cwd: __dirname,
+		stdio: "inherit"
 	});
