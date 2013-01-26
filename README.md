@@ -59,6 +59,10 @@ using [grunt](http://gruntjs.com/).
  * Performs `svn update` after attempting to install (get module changes)
 * 0.4.1
  * Make sure updates to svn modules are fetched
+* 0.5.0
+ * Share stdio with childprocesses, allow for svn prompts to be addresses
+ * More efficient testing... us npm programmatically to install this mod in a
+	 test dir
 
 ## License
 Copyright (c) 2012 iVantage Health Analytics
