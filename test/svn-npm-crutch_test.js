@@ -23,24 +23,52 @@
 var fs = require( "fs" )
 	, cp = require( "child_process" )
 	, rimraf = require( "rimraf" )
+	, npm = require( "npm" )
 	;
 
 exports['svn_npm_crutch_tester'] = {
   setUp: function(done) {
 		// -----------------------------------------------------
-		// Eh, I'm too lazy for nice async code here
+		// Eh, I'm too lazy for nice async code here. You're waiting for my setup
+		// anyway right?
 		// -----------------------------------------------------
 		if( fs.existsSync( __dirname + "/tmp" ) ) {
 			rimraf.sync( __dirname + "/tmp" );
 		}
 		fs.mkdirSync( __dirname + "/tmp" );
+		fs.mkdirSync( __dirname + "/tmp/node_modules" );
+
 		fs.writeFileSync( __dirname + "/tmp/package.json",
 			fs.readFileSync( __dirname + "/artifacts/package.json" )
 		);
 		fs.writeFileSync( __dirname + "/tmp/README.md",
 			fs.readFileSync( __dirname + "/artifacts/README.md" )
 		);
-    done();
+
+		// -----------------------------------------------------
+		// This is a little weird... to be an honest test we need to install *this*
+		// module fresh... and we'd rather not commit to github or publish to the
+		// npm registry whenever we want to run a true test. Luckily npm has a
+		// programmatic interface via the npm module (how meta)
+		// -----------------------------------------------------
+		npm.load( function( err, npm ) {
+			npm.commands.install(
+				// -----------------------------------------------------
+				// Where to install
+				// -----------------------------------------------------
+				__dirname + "/tmp",
+
+				// -----------------------------------------------------
+				// Package to install - this one!
+				// -----------------------------------------------------
+				__dirname + "/../.",
+
+				// -----------------------------------------------------
+				// Callback
+				// -----------------------------------------------------
+				done
+			);
+		});
   },
 
   "full subversion module checkout": function(test) {
