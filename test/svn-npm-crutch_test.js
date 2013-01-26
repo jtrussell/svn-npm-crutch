@@ -49,7 +49,8 @@ exports['svn_npm_crutch_tester'] = {
 		// This is a little weird... to be an honest test we need to install *this*
 		// module fresh... and we'd rather not commit to github or publish to the
 		// npm registry whenever we want to run a true test. Luckily npm has a
-		// programmatic interface via the npm module (how meta)
+		// programmatic interface via the npm module (how meta) and we can install
+		// directly from a folder
 		// -----------------------------------------------------
 		npm.load( function( err, npm ) {
 			npm.commands.install(
@@ -72,38 +73,29 @@ exports['svn_npm_crutch_tester'] = {
   },
 
   "full subversion module checkout": function(test) {
-    test.expect( 4 );
+    test.expect( 3 );
 
-		cp.exec( "npm install", {
-			cwd: __dirname + "/tmp"
-		}, function( error, stdout, stderr ) {
+		test.ok(
+			fs.existsSync( __dirname + "/tmp/node_modules" ),
+			"Should have a node_modules folder" );
 
-			test.equal( error, null, "There should be no error generated" );
+		test.ok(
+			fs.existsSync( __dirname + "/tmp/node_modules/svn-npm-crutch-test" ),
+			"Should have a svn-npm-crutch-test module (from subversion)" );
 
-			test.ok(
-				fs.existsSync( __dirname + "/tmp/node_modules" ),
-				"Should have a node_modules folder" );
+		var svnNpmCrutchTestResult = false;
+		try {
+			svnNpmCrutchTestResult = require( "./tmp/node_modules/svn-npm-crutch-test" ).test();
+		} catch( e ) {
+			// Don't die
+		}
 
-			test.ok(
-				fs.existsSync( __dirname + "/tmp/node_modules/svn-npm-crutch-test" ),
-				"Should have a svn-npm-crutch-test module (from subversion)" );
+		test.equal(
+			svnNpmCrutchTestResult,
+			"HEY YOU GUYS!",
+			"Should be able to require the svn module "
+		);
 
-			var svnNpmCrutchTestResult = false;
-
-			try {
-				svnNpmCrutchTestResult = require( "./tmp/node_modules/svn-npm-crutch-test" ).test();
-			} catch( e ) {
-				// Don't die
-			}
-
-			test.equal(
-				svnNpmCrutchTestResult,
-				"HEY YOU GUYS!",
-				"Should be able to require the svn module "
-			);
-
-			test.done();
-
-		});
+		test.done();
   }
 };
