@@ -1,5 +1,6 @@
 # svn-npm-crutch
 
+
 Allow node modules to be installed from svn repos
 
 ###WARNING###
@@ -64,6 +65,10 @@ using [grunt](http://gruntjs.com/).
  * Share stdio with childprocesses, allow for svn prompts to be addresses
  * More efficient testing... us npm programmatically to install this mod in a
 	 test dir
+* 0.5.3
+ * Added a `svn cleanup` phase after the `svn checkout` and `svn update` phases
+ * Using `cp.exec` to run `npm install` rather than `cp.spawn`... seems to be an
+	 issue on Windows
 
 ## License
 Copyright (c) 2012 iVantage Health Analytics
