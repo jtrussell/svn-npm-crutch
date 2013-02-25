@@ -24,6 +24,7 @@ var fs = require( "fs" )
 	, cp = require( "child_process" )
 	, rimraf = require( "rimraf" )
 	, npm = require( "npm" )
+	, grunt = require( "grunt" )
 	;
 
 exports['svn_npm_crutch_tester'] = {
@@ -32,18 +33,19 @@ exports['svn_npm_crutch_tester'] = {
 		// Eh, I'm too lazy for nice async code here. You're waiting for my setup
 		// anyway right?
 		// -----------------------------------------------------
-		if( fs.existsSync( __dirname + "/tmp" ) ) {
-			rimraf.sync( __dirname + "/tmp" );
-		}
-		fs.mkdirSync( __dirname + "/tmp" );
-		fs.mkdirSync( __dirname + "/tmp/node_modules" );
+		grunt.file.recurse( __dirname + "/tmp", function( f ) {
+			grunt.file["delete"]( f, {force:true} );
+		});
 
-		fs.writeFileSync( __dirname + "/tmp/package.json",
-			fs.readFileSync( __dirname + "/artifacts/package.json" )
-		);
-		fs.writeFileSync( __dirname + "/tmp/README.md",
-			fs.readFileSync( __dirname + "/artifacts/README.md" )
-		);
+		grunt.file.mkdir( __dirname + "/tmp/node_modules" );
+
+		grunt.file.copy(
+				__dirname + "/artifacts/package.json",
+				__dirname + "/tmp/package.json" );
+
+		grunt.file.copy(
+				__dirname + "/artifacts/README.md",
+				__dirname + "/tmp/README.md" );
 
 		// -----------------------------------------------------
 		// This is a little weird... to be an honest test we need to install *this*

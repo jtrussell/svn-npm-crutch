@@ -34,7 +34,12 @@ repositories in your `package.json` under a "svnDependencies" key. e.g.
 _(Coming soon)_
 
 ## Examples
-Run a test `npm test` then take a look at `./test/tmp`
+Run a test with `grunt test` then take a look at `./test/tmp`
+
+## Testing
+Why `grunt test` instead of `npm test`? Running `npm test` initializes some
+environment variables. We could go through and clean that up during the testing
+process... but it's easier to just test with grunt directly.
 
 ## TODO
 
