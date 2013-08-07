@@ -29,7 +29,7 @@
     "uninstall": "node scripts/uninstall.js"
   },
   "devDependencies": {
-    "grunt": "~0.4.0rc4",
+    "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.1.1rc6",
     "grunt-contrib-nodeunit": "~0.1.1",
     "npm": "~1.2.3"
@@ -39,7 +39,8 @@
     "subversion"
   ],
   "dependencies": {
-    "async": "~0.1.22",
-    "rimraf": "~2.1.1"
+    "async": "~0.2.9",
+    "rimraf": "~2.1.1",
+    "colors": "~0.6.1"
   }
 }

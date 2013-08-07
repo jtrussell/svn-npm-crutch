@@ -16,7 +16,7 @@
 		"node": ">= 0.6.0"
 	},
 	"svnDependencies": {
-		"svn-npm-crutch-test": "https://svn-npm-crutch-test.googlecode.com/svn/trunk/"
+		"svn-npm-crutch-test": "http://svn-npm-crutch-test.googlecode.com/svn/trunk/"
 	},
 	"keywords": []
 }
