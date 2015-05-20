@@ -1,9 +1,15 @@
 # svn-npm-crutch
 
+> Allow node modules to be installed from svn repos.
 
-Allow node modules to be installed from svn repos
+As the name implies this project is essentially a crutch allowing you to
+install modules with npm when they are living in a svn repo. It does not aim
+to carry all of npm's features forward for svn housed modules, just provide a
+mechanism to get them into your project with an `npm install`. IF you have other
+features you would like to see... pull requests are appreciated :).
 
-###WARNING###
+### WARNING
+
 Installing this module **will** make changes to your project's package.json
 file.
 
@@ -61,22 +67,22 @@ Add unit tests for any new or changed functionality. Lint and test your code
 using [grunt](http://gruntjs.com/).
 
 ## Release History
-* 0.3.0
- * Tests added
-* 0.4.0
- * Refactored install routine
- * More descriptive status reporting
- * Performs `svn update` after attempting to install (get module changes)
-* 0.4.1
- * Make sure updates to svn modules are fetched
-* 0.5.0
- * Share stdio with childprocesses, allow for svn prompts to be addresses
- * More efficient testing... us npm programmatically to install this mod in a
-	 test dir
 * 0.5.3
  * Added a `svn cleanup` phase after the `svn checkout` and `svn update` phases
  * Using `cp.exec` to run `npm install` rather than `cp.spawn`... seems to be an
 	 issue on Windows
+* 0.5.0
+ * Share stdio with childprocesses, allow for svn prompts to be addresses
+ * More efficient testing... us npm programmatically to install this mod in a
+	 test dir
+* 0.4.1
+ * Make sure updates to svn modules are fetched
+* 0.4.0
+ * Refactored install routine
+ * More descriptive status reporting
+ * Performs `svn update` after attempting to install (get module changes)
+* 0.3.0
+ * Tests added
 
 ## License
 Copyright (c) 2012 iVantage Health Analytics
