@@ -8,16 +8,16 @@ Installing this module **will** make changes to your project's package.json
 file.
 
 Installing this module via `npm install` will add an install hook to your
-project's package.json. Once this hook is added anytime your run `npm install`
+project's package.json. Once this hook is added any time your run `npm install`
 for your project svn-npm-crutch looks through your package.json file for an
 `svnDependencies` block where you can list your subversion stored node modules.
 
 ## Getting Started
-Install with `npm install svn-npm-crutch`
+Install with `npm install --save svn-npm-crutch`
 
 ```javascript
 "dependencies": {
-	"svn-npm-crutch": "git://github.com/jrussell-ivantage/svn-npm-crutch.git"
+  "svn-npm-crutch": "^0.5.4"
 }
 ```
 
@@ -31,7 +31,10 @@ repositories in your `package.json` under a "svnDependencies" key. e.g.
 ```
 
 ## Documentation
-_(Coming soon)_
+When uninstalling this module make sure the install hook has been removed. This
+should happend automatically when you `npm uninstall svn-npm-crutch` and only be
+necessary if you manually uninstall the module by deleting the files and removing
+entries from your package.json.
 
 ## Examples
 Run a test with `grunt test` then take a look at `./test/tmp`
@@ -43,10 +46,10 @@ process... but it's easier to just test with grunt directly.
 
 ## TODO
 
-* More tests... yep
+* More tests.
 * Be less invasive? Right now this rewrites your entire package.json after
 	adding it's install hook using JSON.stringify... This isn't horrible but
-	clobbers things like white space.
+	clobbers white space and formatting.
 * Don't perform an `svn update` if a specific repo tag/revision number is
 	specified... maybe clean out the old module and do a fresh checkout?
 * Better detection of when the module is being installed as a dependency vs
