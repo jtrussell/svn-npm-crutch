@@ -1,1 +1,1 @@
-require( "./lib/hooks" )( "uninstall" );
+require( './lib/hooks' )( 'uninstall' );
