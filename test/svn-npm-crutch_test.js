@@ -26,10 +26,8 @@ var fs = require('fs')
 	, npm = require('npm')
 	, grunt = require('grunt');
 
-exports['svn_npm_crutch_tester'] = {
+module.exports = {
   setUp: function(done) {
-		// Eh, I'm too lazy for nice async code here. You're waiting for my setup
-		// anyway right?
 		grunt.file.recurse(__dirname + '/tmp', function(f) {
 			grunt.file['delete'](f, {force:true});
 		});
