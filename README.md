@@ -32,7 +32,7 @@ repositories in your `package.json` under a "svnDependencies" key. e.g.
 
 ```javascript
 "svnDependencies": {
-	"svn-module": "svn://path/to/svn/repo/trunk"
+  "svn-module": "svn://path/to/svn/repo/trunk"
 }
 ```
 
@@ -54,12 +54,12 @@ process... but it's easier to just test with grunt directly.
 
 * More tests.
 * Be less invasive? Right now this rewrites your entire package.json after
-	adding it's install hook using JSON.stringify... This isn't horrible but
-	clobbers white space and formatting.
+  adding it's install hook using JSON.stringify... This isn't horrible but
+  clobbers white space and formatting.
 * Don't perform an `svn update` if a specific repo tag/revision number is
-	specified... maybe clean out the old module and do a fresh checkout?
+  specified... maybe clean out the old module and do a fresh checkout?
 * Better detection of when the module is being installed as a dependency vs
-	being itself installed (i.e. running `npm install` on the project itself)
+  being itself installed (i.e. running `npm install` on the project itself)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style.
@@ -70,11 +70,11 @@ using [grunt](http://gruntjs.com/).
 * 0.5.3
  * Added a `svn cleanup` phase after the `svn checkout` and `svn update` phases
  * Using `cp.exec` to run `npm install` rather than `cp.spawn`... seems to be an
-	 issue on Windows
+   issue on Windows
 * 0.5.0
  * Share stdio with childprocesses, allow for svn prompts to be addresses
  * More efficient testing... us npm programmatically to install this mod in a
-	 test dir
+   test dir
 * 0.4.1
  * Make sure updates to svn modules are fetched
 * 0.4.0
